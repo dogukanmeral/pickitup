@@ -16,7 +16,7 @@ def type_of_extension(extension,dictionary):
 	return dictionary[extension][0] if extension in dictionary else None
 
 
-def by_type(files):
+def by_type(files, directory_path):
 	global json_file
 	dictionary = json_data(json_file)
 
@@ -26,7 +26,9 @@ def by_type(files):
 		file_extension = extension_of_file(file)
 		file_type = type_of_extension(file_extension,dictionary)
 
+		full_path = os.path.join(directory_path,file)
+
 		if file_extension and file_type:
-			files_by_types[file] = file_type
+			files_by_types[full_path] = file_type
 
 	return files_by_types

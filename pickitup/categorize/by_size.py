@@ -12,16 +12,18 @@ size_intervals = {0:"Less than 1 MB",
 def file_size_bytes(file_path):
 	return os.stat(file_path).st_size
 
-def by_size(files):
+def by_size(files, directory_path):
 	global size_intervals
 
 	files_by_sizes = {}
 	for file in files:
 		file_size = file_size_bytes(file)
 		
+		full_path = os.path.join(directory_path, file)
+
 		for size in reversed(size_intervals):
 			if file_size > size:
-				files_by_sizes[file] = size_intervals[size]
+				files_by_sizes[full_path] = size_intervals[size]
 				break
 
 	return files_by_sizes
