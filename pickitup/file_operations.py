@@ -9,3 +9,6 @@ def create_folder(folder_path):
 
 def move_file(source_path,target_path):
 	shutil.move(source_path,target_path)
+
+def is_file_existing(file_path):
+	return os.path.exists(file_path)
