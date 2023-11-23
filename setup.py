@@ -21,6 +21,6 @@ setup(name='pickitup',
       include_package_data=True,
       packages=['pickitup'],
       entry_points = {
-          'console_scripts': ['pickitup=pickitup.command_line:main'],
+          'console_scripts': ['pickitup=pickitup.Main:main'],
           },
       zip_safe=False)
