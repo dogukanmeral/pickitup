@@ -23,12 +23,13 @@ def by_type(files, directory_path):
 	files_by_types = {}
 
 	for file in files:
-		file_extension = extension_of_file(file)
+		full_path = os.path.join(directory_path,file)
+		
+		file_extension = extension_of_file(full_path)
 		file_type = type_of_extension(file_extension,dictionary)
 
-		full_path = os.path.join(directory_path,file)
 
 		if file_extension and file_type:
-			files_by_types[full_path] = file_type
+			files_by_types[file] = file_type
 
 	return files_by_types

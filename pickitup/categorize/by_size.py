@@ -17,13 +17,13 @@ def by_size(files, directory_path):
 
 	files_by_sizes = {}
 	for file in files:
-		file_size = file_size_bytes(file)
-		
 		full_path = os.path.join(directory_path, file)
 
+		file_size = file_size_bytes(full_path)
+		
 		for size in reversed(size_intervals):
 			if file_size > size:
-				files_by_sizes[full_path] = size_intervals[size]
+				files_by_sizes[file] = size_intervals[size]
 				break
 
 	return files_by_sizes
