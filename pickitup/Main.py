@@ -33,4 +33,9 @@ def main():
         if not is_folder_existing(full_folder_path):
             create_folder(full_folder_path)
 
-    
+    for file in files_by_categories:
+        file_path = os.path.join(args.folder, file)
+        new_file_path = os.path.join(args.folder, files_by_categories[file], file)
+
+        if not is_file_existing(new_file_path):
+            move_file(file_path, new_file_path)
