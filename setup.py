@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='pickitup',
-      version='1.0',
+      version='1.1',
       description='Organize files with one simple command',
       long_description=open('README.md').read(),
       long_description_content_type='text/markdown',
@@ -14,7 +14,7 @@ setup(name='pickitup',
           'Topic :: Desktop Environment :: File Managers',
           'Topic :: Utilities',
           ],
-      url='http://github.com/dogonso/pickitup',
+      url='http://github.com/dogukanmeral/pickitup',
       author='Dogukan Meral',
       author_email='dogukan.meral@yahoo.com',
       license='MIT',
