@@ -5,6 +5,14 @@ import calendar
 import json
 import argparse
 
+from pickitup.categorize.by_date import by_date
+from pickitup.categorize.by_size import by_size
+from pickitup.categorize.by_type import by_type
+from pickitup.file_operations import is_folder_existing
+from pickitup.file_operations import is_file_existing
+from pickitup.file_operations import create_folder
+from pickitup.file_operations import move_file
+
 def main():
     parser = argparse.ArgumentParser(description='Organize files in a spesific folder.')
     parser.add_argument("folder", type=str, help="Path of the folder containing the files")
